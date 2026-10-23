@@ -1,0 +1,3 @@
+<resources>
+ <string name="battery_accessibility_description">仅在你发起游戏性能切换或恢复时，打开荣耀系统电池页面并操作“性能模式”开关。用于在游戏开始时启用系统性能模式、结束后恢复原策略。需要读取该页面的控件状态；不执行其他应用内操作。可随时在系统设置关闭。</string>
+</resources>

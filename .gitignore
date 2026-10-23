@@ -1,0 +1,23 @@
+# Credentials, signing identities and workstation/device artifacts stay local.
+*.p12
+*.jks
+*.keystore
+local.properties
+.env
+.env.*
+*.apk
+*.apk.idsig
+*.apks
+*.dex
+*.class
+*.jar
+*.zip
+__pycache__/
+.venv/
+build/
+toolchain/
+signing/
+device-validation/
+v020-validation/
+
+.work/

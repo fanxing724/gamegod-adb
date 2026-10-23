@@ -1,0 +1,19 @@
+name: JVM checks
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  transactions-and-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Test durable recovery and metrics parsers
+        run: |
+          mkdir -p /tmp/starplay-tests
+          javac --release 8 -d /tmp/starplay-tests app/src/main/java/cn/fanxing/starplay/ModeSession.java app/src/main/java/cn/fanxing/starplay/MonitorMath.java tests/ModeSessionTest.java tests/MonitorMathTest.java
+          java -cp /tmp/starplay-tests ModeSessionTest
+          java -cp /tmp/starplay-tests MonitorMathTest
